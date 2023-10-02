@@ -9,4 +9,5 @@ while true; do
     do
       /root/.fly/bin/flyctl apps destroy "$line" --yes
     done
+    rm fly.toml fly.toml.tmp 2> /dev/null
 done
