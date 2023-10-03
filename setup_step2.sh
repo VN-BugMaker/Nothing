@@ -10,7 +10,7 @@ while true; do
       /root/.fly/bin/flyctl apps destroy "$line" --yes
     done
     yes | /root/.fly/bin/flyctl auth login --email MAIL --password PASS
-    /root/.fly/bin/flyctl launch --dockerignore-from-gitignore --no-deploy --generate-name --region hkg
+    /root/.fly/bin/flyctl launch --dockerignore-from-gitignore --no-deploy --generate-name --region sin
     timeout 14400 /root/.fly/bin/flyctl deploy --no-cache # run 4h
     sleep 900 # sleep 15m
     rm fly.toml fly.toml.tmp 2> /dev/null
